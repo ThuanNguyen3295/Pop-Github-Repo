@@ -14,6 +14,7 @@ class GithubRepoSearchSettings {
     var minStars = 0
     
     init() {
-        
+        searchString = ""
+        minStars = 0
     }
 }

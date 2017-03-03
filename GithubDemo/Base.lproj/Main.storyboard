@@ -95,14 +95,72 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Pop Repos" id="x5q-EH-pP8"/>
+                    <navigationItem key="navigationItem" title="Pop Repos" id="x5q-EH-pP8">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="m6e-iJ-gma">
+                            <connections>
+                                <segue destination="OJL-jt-IsO" kind="presentation" id="IE8-YH-F0e"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="ete-Bi-UoC" id="oe8-fB-gp4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="772.5" y="-605.28169014084506"/>
+            <point key="canvasLocation" x="771" y="-392"/>
+        </scene>
+        <!--Search Settings View Controller-->
+        <scene sceneID="dbb-XM-CQR">
+            <objects>
+                <viewController id="PPK-3L-lF0" customClass="SearchSettingsViewController" customModule="GithubDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cym-IH-gaC"/>
+                        <viewControllerLayoutGuide type="bottom" id="SFI-pf-htW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="38x-XI-pSj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1002" translatesAutoresizingMaskIntoConstraints="NO" id="F18-c9-TkY">
+                                <rect key="frame" x="119" y="188" width="187" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="PPK-3L-lF0" eventType="valueChanged" id="N3m-Ps-99m"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stars: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiW-mL-SZ4">
+                                <rect key="frame" x="16" y="193" width="97" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="MTM-eL-PO7">
+                        <barButtonItem key="leftBarButtonItem" title="Save" id="S6f-dT-FK0">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="PPK-3L-lF0" id="lwM-9c-wP0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="dDo-U7-3f4">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="PPK-3L-lF0" id="ev8-XJ-16V"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="slider" destination="F18-c9-TkY" id="oq4-3J-Rjp"/>
+                        <outlet property="starLabel" destination="JiW-mL-SZ4" id="SYu-ui-Ik3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ea7-8J-rMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2302.5" y="-645.42253521126759"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FpP-oR-azb">
@@ -120,7 +178,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dru-y2-L7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-165" y="-565"/>
+            <point key="canvasLocation" x="771" y="-871"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="49c-34-lmj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OJL-jt-IsO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JBp-SG-ORj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PPK-3L-lF0" kind="relationship" relationship="rootViewController" id="O0B-5J-2AU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nJd-lt-FD1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1481" y="-533"/>
         </scene>
     </scenes>
     <resources>
